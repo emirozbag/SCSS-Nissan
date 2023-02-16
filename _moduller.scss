@@ -1,17 +1,17 @@
-.baslik{
+%baslik{
     font-family: $font-second;
     white-space: nowrap;
     letter-spacing: 3px;
 }
 
-.hover{
+%hover{
     cursor: pointer;
     transition: all 0.5s;
 
 }
 
 
-.design{
+%design{
     height: 50vh;
     background-position: center;
     background-size: cover;
@@ -23,7 +23,7 @@
     gap: 70px;
 
     h1{
-       @extend .baslik;
+       @extend %baslik;
        font-size: 30px;
     }
 
@@ -43,7 +43,7 @@
         transition: background-color 0.5s;
 
         &:hover{
-            @extend .hover;
+            @extend %hover;
             background-color: white;
             color: black;
 

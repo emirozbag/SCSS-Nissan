@@ -1,5 +1,5 @@
-@import 'variabless' ;
-@import 'moduller' ;
+@import '_variabless' ;
+@import '_moduller' ;
 
 
 @mixin mobile{
@@ -70,7 +70,7 @@ header{
 
 .hero{
     min-height: calc(100vh - 68px);
-    padding: 50px;
+    padding: 100px;
     background: linear-gradient( to top, $background 40%, rgb(215,215,215) 40% );
     display: flex;
     justify-content: space-between;
@@ -92,8 +92,10 @@ header{
     flex-direction: column;
     max-width: 500px;
     align-items: center;
-    gap: 50px;
-
+    gap: 70px;
+    @include tablet{
+        gap: 50px   
+    }
 
     h1{
         @extend .baslik;
@@ -110,6 +112,7 @@ header{
     h2{
         @extend .baslik;
         font-size: 26px;
+        margin-top: 100px;
     }
 
     button{
@@ -129,16 +132,22 @@ header{
     }
 }
 
-#images{
+#images {
         display: flex;
         flex-direction: column;
         gap: 50px;
         align-items: center;
 
-    &-main{
+        &-main{
         max-width: 900px;
+        transition: all 0.3s;
+
         @include mobile{
             max-width: 500px;
+        }
+        &:hover {
+            transform: translate(-200px, 50px);
+            @extend %hover;
         }
     }
     &-second{
@@ -152,7 +161,7 @@ header{
 }
 
     #interior{
-        @extend .design;
+        @extend %design;
         background: radial-gradient(circle,transparent ,black ) ,url(/images/interior.jpg);
         background-position: center;
         background-size: cover;
@@ -160,7 +169,7 @@ header{
     }
 
     #exterior{
-        @extend .design;
+        @extend %design;
         background: radial-gradient(circle,transparent ,black ) ,url(/images/exterior-4.jpg);
         background-position: center;
         background-size: cover;

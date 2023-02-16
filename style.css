@@ -11,7 +11,7 @@
   letter-spacing: 3px;
 }
 
-.hover, #cars-section button:hover, #slogan button:hover, .design button:hover, #exterior button:hover, #interior button:hover {
+.hover, #cars-section button:hover, #images-main:hover, #slogan button:hover, .design button:hover, #exterior button:hover, #interior button:hover {
   cursor: pointer;
   transition: all 0.5s;
 }
@@ -116,7 +116,12 @@ header #nav-right a {
   flex-direction: column;
   max-width: 500px;
   align-items: center;
-  gap: 50px;
+  gap: 70px;
+}
+@media (min-width: 1001px) and (max-width: 1500px) {
+  #slogan {
+    gap: 50px;
+  }
 }
 #slogan h1 {
   font-size: 30px;
@@ -131,6 +136,7 @@ header #nav-right a {
 }
 #slogan h2 {
   font-size: 26px;
+  margin-top: 100px;
 }
 #slogan button {
   background-color: #e50000;
@@ -155,11 +161,15 @@ header #nav-right a {
 }
 #images-main {
   max-width: 900px;
+  transition: all 0.3s;
 }
 @media (max-width: 1000px) {
   #images-main {
     max-width: 500px;
   }
+}
+#images-main:hover {
+  transform: translate(-100px, 50px);
 }
 #images-second {
   max-width: 400px;
